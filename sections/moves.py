@@ -15,27 +15,15 @@ diagonal_move=((1,1),(2,2),(3,3),(4,4),(5,5),(6,6),(7,7),
               (-1,1),(-2,2),(-3,3),(-4,4),(-5,5),(-6,6),(-7,7),
               (1,-1),(2,-2),(3,-3),(4,-4),(5,-5),(6,-6),(7,-7))
 
-king_moves=((1,1),(1,-1),(-1,1),(-1,-1),
-            (1,0),(0,1),(-1,0),(0,-1))
-            #dictionary of info about the horse piece
-horse_type={
-    moves:((2,1),(2,-1),(-2,1),(-2,1),(1,2),(1,-2),(-1,2),(-1,-2))
+
+#dictionary of info about the chess pieces
+moves:{
+    king_type:((castle_long),(castle_short),(king_moves))
+    tower_type:((straight_move),)
+    bishop_type:((diagonal_move),)
+    pawn_type:((0,1),(en_passant),(pawn_capture))
+    horse_type:((2,1),(2,-1),(-2,1),(-2,1),(1,2),(1,-2),(-1,2),(-1,-2))
+    queen_type:((straight_move),(diagonal_move))
     }
-#dictionary of info about the pawn
-pawn_type={
-    moves:((0,1),(en_passant),(pawn_capture))
-    }
-#dictionary of info about the bishop
-bishop_type={
-    moves:((diagonal_move),)
-    }
-#dictionary of info about the tower
-tower_type={
-    moves:((straight_move),)
-    }
-#dictionary of info about the king
-king_type={
-    moves:((castle_long),(castle_short),(king_moves))
-           }
 
 
