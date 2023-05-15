@@ -1,18 +1,23 @@
-class Game():
+#class Game():
     #an attempt to define a chessboard
-    def __init__(self,table,):
-        self.table=table
-        self.move_color=0
+    #def __init__(self,chessboard,pieces):
+   #     self.chessboard=chessboard
+      #  self.pieces=pieces
+      #  self.move_color=0
     
-    def move_a_piece(self):
+   # def move_a_piece(self,):
         #method that tries to move a piece
-        if self.move_color==0:
-            self.move_color=1
-            print("white moved,black to move")
-        elif self.move_color==1:
-            self.move_color=0
-            print("black moved, white to move")
-
+      #  if self.move_color==0:
+        #    self.move_color=1
+       #     print("white moved,black to move")
+      #  elif self.move_color==1:
+       #     self.move_color=0
+       #     print("black moved, white to move")
+big_advance="place_holder"
+pawn_capture="place_holder"
+en_passant="place_holder"
+castle_long="place_holder"
+castle_short="place_holder"
 
 class Piece():
     #an attempt to define a chess.piece
@@ -26,6 +31,40 @@ class Piece():
         #gives the complete name of a piece
         name=(str(self.color)+str(self.chess_type))
         return name
+    def move_type(self):
+        #creates a list of moves that depend on the type
+        list_of_moves=[]
+        if self.chess_type is tower_:
+            list_of_moves= [(1,0),(2,0),(3,0),(4,0),(5,0),(6,0),(7,0),
+                            (0,1),(0,2),(0,3),(0,4),(0,5),(0,6),(0,7),
+                            (-1,0),(-2,0),(-3,0),(-4,0),(-5,0),(-6,0),(-7,0),
+                            (0,-1),(0,-2),(0,-3),(0,-4),(0,-5),(0,-6),(0,-7)]
+
+        if self.chess_type is knight:
+            list_of_moves=[(2,1),(2,-1),(-2,1),(-2,1),(1,2),(1,-2),(-1,2),(-1,-2)]
+        if self.chess_type is bishop:
+            list_of_moves=[(1,1),(2,2),(3,3),(4,4),(5,5),(6,6),(7,7),
+                          (-1,-1),(-2,-2),(-3,3),(-4,-4),(-5,5),(-6,-6),(-7,-7),
+                          (-1,1),(-2,2),(-3,3),(-4,4),(-5,5),(-6,6),(-7,7),
+                          (1,-1),(2,-2),(3,-3),(4,-4),(5,-5),(6,-6),(7,-7)]
+       
+        if self.chess_type is queen_:
+            list_of_moves=[(1,1),(2,2),(3,3),(4,4),(5,5),(6,6),(7,7),
+                          (-1,-1),(-2,-2),(-3,3),(-4,-4),(-5,5),(-6,-6),(-7,-7),
+                          (-1,1),(-2,2),(-3,3),(-4,4),(-5,5),(-6,6),(-7,7),
+                          (1,-1),(2,-2),(3,-3),(4,-4),(5,-5),(6,-6),(7,-7),
+                            (1,0),(2,0),(3,0),(4,0),(5,0),(6,0),(7,0),
+                           (0,1),(0,2),(0,3),(0,4),(0,5),(0,6),(0,7),
+                           (-1,0),(-2,0),(-3,0),(-4,0),(-5,0),(-6,0),(-7,0),
+                           (0,-1),(0,-2),(0,-3),(0,-4),(0,-5),(0,-6),(0,-7)]
+        if self.chess_type is king__:
+            list_of_moves=[(castle_long),(castle_short),(1,1),(1,-1),(-1,1),(-1,-1),(1,0),(0,1),(-1,0),(0,-1)]
+        if self.chess_type is pawn__:
+            list_of_moves=[(0,1),(big_advance),(en_passant),(pawn_capture)]
+        
+        return list_of_moves
+    
+    
 
 #dummies
 b_,w_="b_","w_"
@@ -162,6 +201,10 @@ def start_a_game():
     
     
     nice_print(chessboard,pieces)
+    print("make your first move,white starts!")
+
+
+    
 
 
 
